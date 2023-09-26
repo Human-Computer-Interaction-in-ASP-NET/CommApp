@@ -21,6 +21,7 @@ namespace CommunityApp.Pages.CityPages
 
         public IActionResult OnGet()
         {
+        ViewData["ProvinceCode"] = new SelectList(_context.Provinces, "ProvinceCode", "ProvinceCode");
             return Page();
         }
 

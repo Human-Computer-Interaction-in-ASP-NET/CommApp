@@ -20,7 +20,7 @@
                 @Html.DisplayNameFor(model => model.City[0].Population)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.City[0].ProvinceCode)
+                @Html.DisplayNameFor(model => model.City[0].Province)
             </th>
             <th></th>
         </tr>
@@ -35,7 +35,7 @@
                 @Html.DisplayFor(modelItem => item.Population)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ProvinceCode)
+                @Html.DisplayFor(modelItem => item.Province.ProvinceCode)
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.CityId">Edit</a> |

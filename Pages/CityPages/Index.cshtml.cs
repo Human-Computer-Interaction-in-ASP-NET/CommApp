@@ -25,7 +25,8 @@ namespace CommunityApp.Pages.CityPages
         {
             if (_context.Cities != null)
             {
-                City = await _context.Cities.ToListAsync();
+                City = await _context.Cities
+                .Include(c => c.Province).ToListAsync();
             }
         }
     }

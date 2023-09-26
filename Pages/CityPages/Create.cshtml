@@ -25,8 +25,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="City.ProvinceCode" class="control-label"></label>
-                <input asp-for="City.ProvinceCode" class="form-control" />
-                <span asp-validation-for="City.ProvinceCode" class="text-danger"></span>
+                <select asp-for="City.ProvinceCode" class ="form-control" asp-items="ViewBag.ProvinceCode"></select>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
