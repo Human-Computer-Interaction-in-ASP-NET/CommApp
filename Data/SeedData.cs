@@ -23,17 +23,17 @@ namespace CommunityApp.Models
             {
                 new Province
                 {
-                    ProvinceCode = "101",
+                    ProvinceCode = "BC",
                     ProvinceName = "BC",
                 },
                 new Province
                 {
-                    ProvinceCode = "102",
+                    ProvinceCode = "ONT",
                     ProvinceName = "ONT",
                 },
                 new Province
                 {
-                    ProvinceCode = "103",
+                    ProvinceCode = "ALB",
                     ProvinceName = "AL",
                 }
             };
