@@ -4,6 +4,7 @@ using CommunityApp.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CommunityApp.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230927053806_M21")]
+    partial class M21
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -37,11 +40,14 @@ namespace CommunityApp.Data.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("ProvinceCode")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ProvinceCode1")
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("CityId");
 
-                    b.HasIndex("ProvinceCode");
+                    b.HasIndex("ProvinceCode1");
 
                     b.ToTable("City", (string)null);
 
@@ -347,7 +353,7 @@ namespace CommunityApp.Data.Migrations
                 {
                     b.HasOne("CommunityApp.Models.Province", "Province")
                         .WithMany("Cities")
-                        .HasForeignKey("ProvinceCode");
+                        .HasForeignKey("ProvinceCode1");
 
                     b.Navigation("Province");
                 });
